@@ -1,7 +1,7 @@
-import type { Controller } from "@axonlabs/core";
+import type { Request, Response } from "@axonlabs/core";
 import { sampleService } from "../services/sample.service";
 
-const helloWorld: Controller = async (req, res) => {
+const helloWorld = async (req: Request<any>, res: Response) => {
     const msg = sampleService();
 
     return res.status(200).body({
